@@ -1,0 +1,108 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .login{
+    margin: 20px;
+    font-size: 20px;
+  }
+
+  .getProduct{
+    margin: 20px;
+    font-size: 20px;
+  }
+
+</style>
+
+<form class="login" (ngSubmit)="onLogin(login, password)" >
+  <div>
+    <label for="login">Login:</label>
+    <input type="text" id="login" name="login" [(ngModel)]="login" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required>
+  </div>
+  <button type="submit">Log in</button>
+</form>
+
+<form class="login" (ngSubmit)="onRegister(loginR, passwordR)" >
+  <div>
+    <label for="loginR">Login:</label>
+    <input type="text" id="loginR" name="loginR" [(ngModel)]="loginR" required>
+  </div>
+  <div>
+    <label for="passwordR">Password:</label>
+    <input type="password" id="passwordR" name="passwordR" [(ngModel)]="passwordR" required>
+  </div>
+  <button type="submit">Sign up</button>
+</form>
+
+<button (click)="onLogOut()" class="show-Products">
+  <h1>Log Out </h1>
+</button>
+
+<form (ngSubmit)="onGetProduct(id)" class="getProduct">
+  <div>
+    <label for="id">Id:</label>
+    <input type="text" id="id" name="id" [(ngModel)]="id" required>
+  </div>    
+  <button type="submit">get product</button>
+</form>
+
+<button (click)=" onGetProducts()" class="show-Products">
+  <h1>Show Products </h1>
+</button>
+
+<form class="login" (ngSubmit)="onAddProduct(name, price)" >
+  <div>
+    <label for="name">name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="name" required>
+  </div>
+  <div>
+    <label for="price">Price:</label>
+    <input type="price" id="price" name="price" [(ngModel)]="price" required>
+  </div>
+  <button type="submit">Add Product</button>
+</form>
+
+<form class="login" (ngSubmit)="onUpdateProduct(idU,nameU, priceU)" >
+  <div>
+    <label for="idU">id:</label>
+    <input type="text" id="idU" name="idU" [(ngModel)]="idU" required>
+  </div>
+  <div>
+    <label for="nameU">name:</label>
+    <input type="text" id="nameU" name="nameU" [(ngModel)]="nameU" required>
+  </div>
+  <div>
+    <label for="priceU">Price:</label>
+    <input type="price" id="priceU" name="priceU" [(ngModel)]="priceU" required>
+  </div>
+  <button type="submit">Update Product</button>
+</form>
+
+<form (ngSubmit)="onDeleteProduct(id)" class="getProduct">
+  <div>
+    <label for="idD">Id:</label>
+    <input type="text" id="idD" name="idD" [(ngModel)]="idD" required>
+  </div>    
+  <button type="submit">delete product</button>
+</form>
+
+<router-outlet></router-outlet>
